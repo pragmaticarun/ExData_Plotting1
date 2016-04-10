@@ -15,7 +15,7 @@ par(mfcol=c(2,2),mar=c(4,4,2,2))
 data1 = subset(rd,Date == "1/2/2007" | Date == "2/2/2007")
 data1$Time <- paste(data1$Date,data1$Time,sep=" ")
 data1$Time <- strptime(x = data1$Time,format = "%d/%m/%Y %H:%M:%S")
-plot(data1$Time,data1$Global_active_power,ylab="Global Active Power (kilowatts)",xlab="",type="l")
+plot(data1$Time,data1$Global_active_power,ylab="Global Active Power (kilowatts)",xlab="",type="l",lwd=0.5)
 
 plot(data1$Time,data1$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
 lines(data1$Time,data1$Sub_metering_1,col="black",type="l")
@@ -25,6 +25,6 @@ legend("topright", lty=1, col = c("black","red","blue"), legend = c("Sub meterin
 
 plot(data1$Time,data1$Voltage,type="l",ylab="Voltage",xlab="datetime")
 
-plot(data1$Time,data1$Global_reactive_power,type="l",ylab="Global reactive power",xlab="datetime")
+plot(data1$Time,data1$Global_reactive_power,type="l",ylab="Global reactive power",xlab="datetime",lwd=0.5)
 dev.off(dev.cur())
 
